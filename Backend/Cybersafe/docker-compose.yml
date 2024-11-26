@@ -1,45 +1,28 @@
-
 services:
   mongodb:
     image: mongo:latest
-    container_name: mongodb
-    hostname: mongodb
+    container_name: mongodb-cybersafe
+    restart: always
     volumes:
-      - ./mongodb/initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-      - mongodb-data:/data/db/
-      - mongodb-log:/var/log/mongodb/
-    env_file:
-      - .env
+      - mongodb-data:/data/db
     environment:
-      MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
-      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
     ports:
       - "27017:27017"
-    networks:
-      - mongodb_network
 
   mongo-express:
     image: mongo-express:latest
     container_name: mongo-express
     restart: always
     environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: ${DB_USER}
-      ME_CONFIG_MONGODB_ADMINPASSWORD: ${DB_PASSWORD}
-      ME_CONFIG_MONGODB_PORT: 27017
-      ME_CONFIG_MONGODB_SERVER: 'mongodb'
-      ME_CONFIG_BASICAUTH_USERNAME: ${DB_USER}
-      ME_CONFIG_BASICAUTH_PASSWORD: ${DB_PASSWORD}
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: root
+      ME_CONFIG_MONGODB_SERVER: mongodb
     ports:
-      - 8081:8081
-    networks:
-      - mongodb_network
+      - "8081:8081"
     depends_on:
       - mongodb
 
-# volumes:
-#   - ./data:/data/db
-
-networks:
-  mongodb_network:
-    driver: bridge
-    name: mongo-network
+volumes:
+  mongodb-data:
