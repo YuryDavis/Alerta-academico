@@ -1,0 +1,50 @@
+.bodyGeral {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sectionCard {
+  background-color: #c2b7b7;
+  gap: 0.6rem;
+  width: 50%;
+  border-radius: 74px;
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem 1rem;
+}
+
+.sectionCard p {
+  width: 100%;
+  text-align: center;
+}
+
+
+@media (max-width: 992px) {
+  .sectionCard {
+    width: 70%;
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionCard {
+    width: 80%;
+    padding: 1.5rem 1rem;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .sectionCard {
+    width: 90%;
+    padding: 1rem 0.5rem;
+    border-radius: 20px; 
+  }
+}

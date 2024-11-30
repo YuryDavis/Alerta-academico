@@ -1,0 +1,170 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.sectionCard {
+  background-color: #c7c7c7;
+  height: 80vh;
+  width: 65%;
+  border-radius: 74px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputFindTurma {
+  width: 25%;
+  border: none;
+  height: 2.5rem;
+  border-radius: 12px;
+  text-align: center;
+  outline: none;
+  margin-bottom: 1rem;
+}
+
+.bodyCard {
+  height: 90%;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  overflow-y: auto;
+}
+
+.card {
+  height: 20rem;
+  width: 18rem;
+  border-radius: 9px;
+  margin: 1rem;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.bodyCardTurma {
+  width: 100%;
+  height: 80%;
+  background-color: #fff;
+  border-radius: 9px 9px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.redBorder {
+  border: 2px solid red;
+  box-shadow: -2px 6px 5px 0px rgba(255, 0, 0, 0.75);
+  -webkit-box-shadow: -2px 6px 5px 0px rgba(255, 0, 0, 0.75);
+  -moz-box-shadow: -2px 6px 5px 0px rgba(255, 0, 0, 0.75);
+}
+
+.yellowBorder {
+  border: 2px solid #ffff00;
+  box-shadow: -2px 6px 5px 0px rgba(255, 255, 0, 0.75);
+  -webkit-box-shadow: -2px 6px 5px 0px rgba(255, 255, 0, 0.75);
+  -moz-box-shadow: -2px 6px 5px 0px rgba(255, 255, 0, 0.75);
+}
+
+.tilteCardTurma {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.detailsCardTurma {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footerCard {
+  background-color: #2b0d7c;
+  border-radius: 7px;
+  width: 100%;
+  height: 20%;
+  border-radius: 0 0 9px 9px;
+  display: flex;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+}
+
+.tilteCard {
+  letter-spacing: 5px;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+@media (max-width: 1200px) {
+  .sectionCard {
+    width: 75%;
+    height: 75vh;
+  }
+}
+
+@media (max-width: 992px) {
+  .sectionCard {
+    width: 85%;
+    height: 70vh;
+  }
+}
+
+@media (max-width: 870px) {
+  .inputFindTurma {
+    width: 50%;
+    margin-top: 1rem;
+  }
+  .sectionCard {
+    width: 85%;
+    height: 70vh;
+  }
+
+  .card {
+    width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .inputFindTurma {
+    width: 50%;
+    margin-top: 1rem;
+  }
+  .sectionCard {
+    width: 95%;
+    height: auto;
+  }
+
+  .card {
+    width: 40%;
+  }
+}
+
+@media (max-width: 576px) {
+  .inputFindTurma {
+    width: 80%;
+    margin-top: 1rem;
+  }
+
+  .sectionCard {
+    width: 90%;
+    height: auto;
+  }
+
+  .bodyCard {
+    justify-content: center;
+  }
+
+  .card {
+    width: 80%;
+  }
+}
