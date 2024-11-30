@@ -1,0 +1,186 @@
+.containerBody {
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bodyCard {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  align-items: center;
+  border-radius: 2rem;
+}
+
+.cardAluno {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.cardInformativo {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2b0d7c;
+  border-radius: 0.5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.alunoNome {
+  width: 5rem;
+  text-align: center;
+}
+.info {
+  text-align: center;
+}
+
+.alunoMatricula,
+.alunoNota,
+.alunoFrequencia {
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  align-items: center;
+}
+
+.alunoFreq{
+  margin-right: 10px;
+}
+
+.aprovado {
+  color: green;
+}
+
+.analise {
+  color: rgb(180, 164, 17);
+}
+
+.reprovado {
+  color: red;
+}
+
+.cardAluno {
+  background-color: #d9d9d9;
+  border-radius: 0.5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+}
+
+.containerAluno {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  /* justify-content: center; */
+  height: 80rem;
+  overflow-y: auto;
+  padding: 1rem 0;
+}
+
+.cardAluno:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+.inputFindTurma,
+.selectMedia {
+  height: 2.5rem;
+  border-radius: 12px;
+  text-align: center;
+  outline: none;
+}
+.input {
+  width: 100%;
+  text-align: center;
+  padding-top: 1rem;
+}
+.containerSearch {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+.teste {
+  width: 100%;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+/* Tablets and smaller laptops (up to 992px) */
+@media (max-width: 992px) {
+  .bodyCard {
+    width: 80%;
+    padding: 1rem;
+  }
+
+  .alunoNome,
+  .alunoMatricula,
+  .alunoNota,
+  .alunoFrequencia {
+    width: 4rem;
+  }
+
+  .containerSearch {
+    width: 70%;
+  }
+}
+
+/* Large smartphones and tablets (up to 768px) */
+@media (max-width: 768px) {
+  .bodyCard {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .alunoNome,
+  .alunoMatricula,
+  .alunoNota,
+  .alunoFrequencia {
+    width: 3.5rem;
+  }
+
+  .containerSearch {
+    width: 80%;
+  }
+
+  .inputFindTurma,
+  .selectMedia {
+    width: 100%;
+  }
+}
+
+/* Small smartphones (up to 576px) */
+@media (max-width: 576px) {
+  .bodyCard {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .alunoNome,
+  .alunoMatricula,
+  .alunoNota,
+  .alunoFrequencia {
+    width: 3rem;
+  }
+
+  .containerSearch {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .containerAluno {
+    width: 90%;
+  }
+
+  .inputFindTurma,
+  .selectMedia {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,138 @@
+.container_disciplina{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.body_disciplinas{
+    width: 65%;
+    height: auto;
+
+    border-radius:2rem;
+    background-color: #C7C7C7;
+}
+
+.container_card{
+    margin:.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
+.card_disciplina{
+    height: 13rem;
+    width: 40rem;
+    background-color:#fff;
+    border-radius: 4rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container_title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+}
+
+.container_title p{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    color: #fff;
+    border-radius: 2rem;
+    background-color: #2b0d7c;
+    font-size: .8rem;
+}
+
+.container_body{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.body{
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 1024px) {
+
+    .container_disciplina{
+        width: 80%;
+       
+    }
+    .body_disciplinas {
+        width: 60%;
+    }
+    
+    .card_disciplina {
+        height: auto;
+        padding: 1rem;
+        width:30rem;
+    }
+
+    .container_title p {
+        font-size: .7rem;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .body_disciplinas {
+        width: 90%;
+    }
+
+    .container_body {
+        flex-direction: column;
+                
+    }
+
+    .container_title p {
+        width: 60%;
+    }
+
+    .card_disciplina {
+        height: auto;
+        padding: 1rem;
+        width:90%;
+    }
+
+    
+}
+
+@media (max-width: 480px) {
+   
+    
+
+    
+    .card_disciplina {
+        
+        padding: 1rem;
+        border-radius: 2rem;
+    }
+
+    .container_title p {
+        width: 80%;
+        font-size: .6rem;
+    }
+
+    .body{
+
+        font-size: 0.8rem;
+    }
+
+    
+}
