@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const AlunoController = require('../controllers/AlunoController');
 
-const AlunoController = require('../controllers/AlunoController')
-router.get('/', AlunoController.showAlunos);
+
+router.get('/find', AlunoController.findAll);
+router.get('/:mat', AlunoController.findByMat);
 
 module.exports = router

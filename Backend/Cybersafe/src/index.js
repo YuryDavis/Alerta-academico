@@ -1,12 +1,10 @@
 const express = require('express');
-const exphbs = require('express-handlebars');
-const conn = require('./db/conn')
+const conn = require('./db/conn');
 const app = express();
 
 const AlunosRoutes = require('./routes/AlunosRoutes');
+const MensagensRoutes = require('./routes/MensagensRoutes');
 
-app.engine('handlebars', exphbs.engine());
-app.set('view engine', 'handlebars');
 
 // read body
 app.use(
@@ -18,8 +16,7 @@ app.use(
 app.use(express.json());
 app.use(express.static('public'));
 
-app.use('/alunos', AlunosRoutes);
-app.use('/',(req,res)=>{
-    res.send('ola server')
-})
+app.use('/api/alunos', AlunosRoutes);
+app.use('/api/mensagens', MensagensRoutes);
+
 app.listen(3000)
