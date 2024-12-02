@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose
 
 const MensagenSchema = new Schema({
-        aluno: {type: mongoose.Schema.Types.ObjectId, ref: 'Alunos' },
+        alunoId: {type: mongoose.Schema.Types.ObjectId, ref: 'Alunos' },
         titulo: {type: String, required: true},
         descricao: {type: String, required: true}, 
     },
