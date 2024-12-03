@@ -1,10 +1,13 @@
 package com.integrative.topics.integrativetopics.services;
 
 import com.integrative.topics.integrativetopics.dtos.views.ViewListTeamsDTO;
+import com.integrative.topics.integrativetopics.exception.ResourceNotFoundException;
+import com.integrative.topics.integrativetopics.model.Professor;
 import com.integrative.topics.integrativetopics.model.Team;
 import com.integrative.topics.integrativetopics.repository.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.ResourceAccessException;
 
 import java.util.Collections;
 import java.util.List;
@@ -24,7 +27,13 @@ public class TeamService {
 
 
     public Set<ViewListTeamsDTO> findTeamsByProfessorId(String enrollment) {
-        Long professorId = professorService.findProfessorBy(enrollment).getProfessorId();
+        Professor professor = professorService.findProfessorBy(enrollment);
+
+        if(professor == null) {
+            throw new ResourceNotFoundException("Não há professor com o enrollment: " + enrollment);
+        }
+
+        Long professorId = professor.getProfessorId();
 
         List<Team> teamList = teamRepository.findDistinctTeamsByDisciplinesEnrollment( professorId );
         System.out.println(teamList.toString());

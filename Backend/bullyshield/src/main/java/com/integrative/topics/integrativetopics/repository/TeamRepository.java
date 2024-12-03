@@ -19,10 +19,10 @@ public interface TeamRepository extends JpaRepository<Team, Long> {
             "WHERE d.professor.enrollment = :enrollment"
     )*/
     @Query(value = "SELECT DISTINCT t.* " +
-            "FROM integrative_topic.team t " +
-            "JOIN integrative_topic.discipline_teams dt ON t.team_id = dt.team_id " +
-            "JOIN integrative_topic.discipline d ON dt.discipline_id = d.discipline_id " +
-            "JOIN integrative_topic.professor p ON d.professor_id = p.professor_id " +
+            "FROM team t " +
+            "JOIN discipline_teams dt ON t.team_id = dt.team_id " +
+            "JOIN discipline d ON dt.discipline_id = d.discipline_id " +
+            "JOIN professor p ON d.professor_id = p.professor_id " +
             "WHERE p.professor_id = :professorId", nativeQuery = true)
     List<Team> findDistinctTeamsByDisciplinesEnrollment(@Param("professorId") Long professorId);
 
