@@ -1,0 +1,30 @@
+.logout {
+    transition: all 0.3s ease; /* Suaviza as transições do botão */
+    cursor: pointer;
+  }
+  
+  .logout:hover {
+    color: #e1e1e1; /* Cor mais clara ao passar o mouse */
+  }
+  
+  .logout span {
+    font-size: 16px;
+    transition: opacity 0.3s;
+  }
+  .ant-layout-sider-trigger {
+    display: none; /* Oculta o ícone de trigger padrão */
+  }
+
+  .bodyImg{
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .logoColapsed{
+    margin:0 auto 3rem ;
+    height: 4rem;
+  }
+  .logoOpen{
+    margin:0  auto;
+    height: 7rem;
+  } 
