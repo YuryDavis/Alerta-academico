@@ -6,7 +6,8 @@ const MensagenSchema = new Schema({
         titulo: {type: String, required: true},
         descricao: {type: String, required: true}, 
     },
-    {timestamps: true});
+    {timestamps: true},
+    {versionKey: false});
 
     
 module.exports = mongoose.model('Mensagens', MensagenSchema);
