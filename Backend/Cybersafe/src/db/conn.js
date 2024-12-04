@@ -5,7 +5,6 @@ async function main(){
     console.log('connectado ao mongodb com mongoose')
 }
 
-//promissed based podemos encadear catch()
 main().catch((err) => console.log(err))
 
 module.exports = mongoose

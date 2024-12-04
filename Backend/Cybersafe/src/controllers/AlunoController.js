@@ -1,11 +1,15 @@
 const Alunos = require('../models/Alunos');
+const calcMedia = require('../utils/calcMediaGeral');
 
 module.exports = class AlunoController {
 
     static async findAll(req, res){
         const alunos = await Alunos.find();
-        
-       res.send({alunos})
+        let media = 0;
+
+        media = calcMedia(alunos);
+
+       res.send({alunos, media})
     }
 
     static async findByMat(req, res){
@@ -36,18 +40,6 @@ module.exports = class AlunoController {
             console.error('Error retrieving messages:', err);
             return res.status(500).json({ message: 'Internal server error' });
         }
-    }
-    
-    static async mediaGeral(req, res){
-        const alunos = await Alunos.find();
-        const geral = alunos.map(aluno => {
-            if(aluno.media != undefined || aluno.media != null){
-                geral += aluno.media;
-            }
-            
-        })
-
-        return res.status(200).json({geral});
     }
 
 }
