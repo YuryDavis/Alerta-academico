@@ -1,11 +1,15 @@
 const express = require("express");
 const conn = require("./db/conn");
 const app = express();
-
+const cors = require('cors')
 const AlunosRoutes = require("./routes/AlunosRoutes");
 const MensagensRoutes = require("./routes/MensagensRoutes");
 
 // read body
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
+
 app.use(
   express.urlencoded({
     extended: true,
