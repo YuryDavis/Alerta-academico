@@ -20,7 +20,7 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: root
       ME_CONFIG_MONGODB_SERVER: mongodb
     ports:
-      - "8081:8081"
+      - "8080:8080"
     depends_on:
       - mongodb
 
