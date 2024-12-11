@@ -5,22 +5,9 @@ import Card from "../card";
 import { getAllUser,enviarMsg } from "../../../services/api";
 import ModalDetalhe from "../../ModalDetalhe/ModalDetalhe";
 const index = () => {
-  const [alunos, setAlunos] = useState([
-    { nome: "Diego", matricula: "123131231" },
-    { nome: "Diego", matricula: "123131231" },
-    { nome: "Diego", matricula: "123131231" },
-    { nome: "Diego", matricula: "123131231" },
-    { nome: "Diego", matricula: "123131231" },
-    { nome: "Diego", matricula: "123131231" },
-    { nome: "Diego", matricula: "123131231" },
-    { nome: "Diego", matricula: "123131231" },
-    { nome: "Diego", matricula: "123131231" },
-    { nome: "Diego", matricula: "123131231" },
-    { nome: "Diego", matricula: "123131231" },
-    { nome: "Diego", matricula: "123131231" },
-    { nome: "Diego", matricula: "123131231" },
-    { nome: "Diego", matricula: "123131231" },
-  ]);
+  const [alunos, setAlunos] = useState([]);
+  const [frequencia, setFrequencia] = useState('')
+  const [media, setMedia] = useState('')
   const [modalVisivel, setModalVisivel] = useState(false);
   const [alunoSelecionado, setAlunoSelecionado] = useState(null);
 
@@ -37,6 +24,8 @@ const index = () => {
     const getUser = async () => {
       const response = await getAllUser();
       setAlunos(response.data.alunos);
+      setFrequencia(response.data.frequencia)
+      setMedia(response.data.media)
     };
     getUser();
   }, []);
@@ -44,9 +33,9 @@ const index = () => {
   return (
     <section className={Style.containerTable}>
       <section className={Style.bodyCard}>
-        <Card />
-        <Card />
-        <Card />
+        <Card info={"Alunos"} numero={alunos.length}/>
+        <Card info={"Media"} numero={media} />
+        <Card info={"Frequencia"} numero={`${frequencia}%`}/>
       </section>
 
       <section className={Style.containerHeaderTable}>
