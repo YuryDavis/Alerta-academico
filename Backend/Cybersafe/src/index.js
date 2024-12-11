@@ -7,7 +7,7 @@ const MensagensRoutes = require("./routes/MensagensRoutes");
 
 // read body
 app.use(cors({
-  origin: 'http://localhost:5173'
+  origin: /http:\/\/localhost:517\d/,
 }));
 
 app.use(

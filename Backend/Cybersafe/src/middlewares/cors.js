@@ -1,3 +1,3 @@
 exports.corsOptions = {
-    origin: 'http://localhost:5173',
+    origin: /http:\/\/localhost:517\d/,
 };

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Style from "./TabelaAlunos.module.css";
-import HeaderTable from '../headerTable'
-import Card from '../card'
-import { getAllUser } from "../../../services/api";
+import HeaderTable from "../headerTable";
+import Card from "../card";
+import { getAllUser,enviarMsg } from "../../../services/api";
+import ModalDetalhe from "../../ModalDetalhe/ModalDetalhe";
 const index = () => {
   const [alunos, setAlunos] = useState([
     { nome: "Diego", matricula: "123131231" },
@@ -20,24 +21,36 @@ const index = () => {
     { nome: "Diego", matricula: "123131231" },
     { nome: "Diego", matricula: "123131231" },
   ]);
-  useEffect(()=>{
-    const getUser = async () =>{
-      const response = await getAllUser()
-      setAlunos(response.data.alunos)
-    }
-    getUser()
-  },[])
+  const [modalVisivel, setModalVisivel] = useState(false);
+  const [alunoSelecionado, setAlunoSelecionado] = useState(null);
+
+  const abrirModal = (aluno) => {
+    setAlunoSelecionado(aluno);
+    setModalVisivel(true);
+  };
+
+  const fecharModal = () => {
+    setModalVisivel(false);
+    setAlunoSelecionado(null);
+  };
+  useEffect(() => {
+    const getUser = async () => {
+      const response = await getAllUser();
+      setAlunos(response.data.alunos);
+    };
+    getUser();
+  }, []);
+
   return (
     <section className={Style.containerTable}>
-        <section className={Style.bodyCard}>
-        <Card/>
-        <Card/>
-        <Card/>
-        </section>
-
+      <section className={Style.bodyCard}>
+        <Card />
+        <Card />
+        <Card />
+      </section>
 
       <section className={Style.containerHeaderTable}>
-        <HeaderTable alunos={alunos}/>
+        <HeaderTable alunos={alunos} />
         <table className={Style.tabelaAlunos}>
           <thead>
             <tr>
@@ -57,10 +70,16 @@ const index = () => {
                 <td className={Style.linha}>
                   <button
                     className={Style.saibaMais}
-                    onClick={() => alert(`Detalhes do ${aluno.media}`)}
+                    onClick={() => abrirModal(aluno)}
                   >
                     🔍
                   </button>
+                  {modalVisivel && (
+                    <ModalDetalhe
+                      aluno={alunoSelecionado}
+                      fecharModal={fecharModal}
+                    />
+                  )}
                 </td>
               </tr>
             ))}
