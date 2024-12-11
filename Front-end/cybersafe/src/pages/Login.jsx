@@ -12,9 +12,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
       <LoginForm onSubmit={handleSubmit} />
-    </div>
   );
 };
 

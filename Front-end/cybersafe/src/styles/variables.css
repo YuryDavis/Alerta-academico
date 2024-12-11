@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+}
+
+
 :root {
     /* Cores primárias */
     --primary-gradient: linear-gradient(45deg, #2575fc, #131f8a);
-    --primary-color: #2575fc;
-    --secondary-color: #131f8a;
+    --primary-color: #B2E4CF;
+    --secondary-color: #23888F;
 
     /* Cores de fundo e texto */
     --background-color: #f5f5f5;
@@ -12,15 +20,15 @@
     --hover-color: #131f8a;
 
     /* Tipografia */
-    --font-family: 'Arial', sans-serif;
+    --font-family: "Amaranth", sans-serif;
     --font-size: 1rem;
     --font-size-small: 0.9rem;
     --font-weight-bold: bold;
 
     /* Bordas e espaçamentos */
-    --border-radius: 8px;
+    /* --border-radius: 8px;
     --padding: 0.8rem;
-    --margin: 1rem;
+    --margin: 1rem; */
 
     /* Dimensões */
     --button-height: 48px;

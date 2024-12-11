@@ -15,7 +15,6 @@ const index = () => {
   e.preventDefault();
   if (matricula){
     if (password == "admin10"){
-      const response =  await Authentication(matricula)
       Cookies.set('user', matricula)
       navigate('/inicio')
       }else{

@@ -1,25 +1,25 @@
-const express = require('express');
-const exphbs = require('express-handlebars');
-const conn = require('./db/conn')
+const express = require("express");
+const conn = require("./db/conn");
 const app = express();
-
-const AlunosRoutes = require('./routes/AlunosRoutes');
-
-app.engine('handlebars', exphbs.engine());
-app.set('view engine', 'handlebars');
+const cors = require('cors')
+const AlunosRoutes = require("./routes/AlunosRoutes");
+const MensagensRoutes = require("./routes/MensagensRoutes");
 
 // read body
+app.use(cors({
+  origin: /http:\/\/localhost:517\d/,
+}));
+
 app.use(
-    express.urlencoded({
-        extended: true
-    })
+  express.urlencoded({
+    extended: true,
+  })
 );
 
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static("public"));
 
-app.use('/alunos', AlunosRoutes);
-app.use('/',(req,res)=>{
-    res.send('ola server')
-})
-app.listen(3000)
+app.use("/api/alunos", AlunosRoutes);
+app.use("/api/mensagens", MensagensRoutes);
+
+app.listen(3000);
