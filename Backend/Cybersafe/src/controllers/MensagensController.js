@@ -23,7 +23,7 @@ module.exports = class MensagensController {
       if (!aluno || aluno.length === 0) {
         return res
           .status(404)
-          .json({ message: "Nenhuma mensagem encontrada para este aluno" });
+          .json({ message: "Aluno não encontrado." });
       }
 
       const idAluno = aluno._id;
@@ -51,7 +51,7 @@ module.exports = class MensagensController {
     if (!aluno || aluno.length === 0) {
       return res
         .status(404)
-        .json({ message: "Nenhuma mensagem encontrada para este aluno" });
+        .json({ message: "Aluno não encontrado." });
     }
 
     const idAluno = aluno._id;
